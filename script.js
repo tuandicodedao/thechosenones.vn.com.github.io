@@ -125,6 +125,89 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+// Mã JavaScript cho trang Đăng nhập (login.html)
+document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("login-form");
 
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // Thực hiện kiểm tra tên đăng nhập và mật khẩu ở đây (có thể dùng Firebase Authentication hoặc API của bạn)
+
+    // Nếu đăng nhập thành công, chuyển hướng về trang chính (index.html)
+    window.location.href = "index.html";
+  });
+});
+
+// Mã JavaScript cho trang Giỏ hàng (cart.html)
+document.addEventListener("DOMContentLoaded", function () {
+  const cartItems = document.querySelectorAll(".cart-item");
+  const removeButtons = document.querySelectorAll(".remove-button");
+  const checkoutButton = document.querySelector(".checkout-button");
+
+  // Xử lý sự kiện khi nhấn nút "Xóa" trên mỗi mục trong giỏ hàng
+  removeButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      // Xóa mục khỏi giỏ hàng (có thể dùng API của bạn để lưu trữ giỏ hàng)
+      const item = button.parentElement;
+      item.remove();
+    });
+  });
+
+  // Xử lý sự kiện khi nhấn nút "Thanh toán"
+  checkoutButton.addEventListener("click", function () {
+    // Chuyển hướng đến trang thanh toán hoặc xử lý thanh toán ở đây (tuỳ vào nhu cầu của bạn)
+    window.location.href = "checkout.html";
+  });
+});
+
+  // Hàm kiểm tra đăng nhập
+function login(username, password) {
+  // Thực hiện kiểm tra tên đăng nhập và mật khẩu ở đây (có thể dùng Firebase Authentication hoặc API của bạn)
+  // Trả về true nếu đăng nhập thành công, ngược lại trả về false
+  return true; // Đăng nhập thành công (để mục đích demo)
+}
+
+// Hàm xử lý khi người dùng nhấn nút "Đăng nhập" trên trang Đăng nhập
+function handleLogin() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
   
+  if (login(username, password)) {
+    // Nếu đăng nhập thành công, chuyển hướng đến trang chính (index.html)
+    window.location.href = "index.html";
+  } else {
+    alert("Tên đăng nhập hoặc mật khẩu không chính xác. Vui lòng thử lại.");
+  }
+}
+
+// Hàm xử lý khi người dùng nhấn nút "Xóa" trên trang Giỏ hàng
+function handleRemoveItem(item) {
+  // Xóa mục khỏi giỏ hàng (có thể dùng API của bạn để lưu trữ giỏ hàng)
+  item.remove();
+}
+
+// Hàm xử lý khi người dùng nhấn nút "Thanh toán" trên trang Giỏ hàng
+function handleCheckout() {
+  // Chuyển hướng đến trang thanh toán hoặc xử lý thanh toán ở đây (tuỳ vào nhu cầu của bạn)
+  window.location.href = "checkout.html";
+}
+
+// Đăng ký các sự kiện cho trang Đăng nhập
+document.getElementById("login-button").addEventListener("click", handleLogin);
+
+// Đăng ký các sự kiện cho trang Giỏ hàng
+const removeButtons = document.querySelectorAll(".remove-button");
+const checkoutButton = document.getElementById("checkout-button");
+
+removeButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    handleRemoveItem(button.parentElement);
+  });
+});
+
+checkoutButton.addEventListener("click", handleCheckout);
+
 });

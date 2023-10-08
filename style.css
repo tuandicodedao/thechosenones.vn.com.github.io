@@ -198,3 +198,221 @@ footer {
 .product-item:hover .promotion-label {
   display: block;
 }
+.greeting-card {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.greeting-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-images img {
+  width: 48%; /* Để xếp ngang, đặt chiều rộng của ảnh thành 48% */
+  border: 3px solid #ccc; /* Đây là khung của ảnh */
+  padding: 5px; /* Khoảng cách giữa khung và ảnh */
+  margin: 5px; /* Khoảng cách giữa các ảnh */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+}
+
+.card-images img:first-child {
+  margin-left: 0; /* Không có khoảng cách bên trái cho ảnh đầu tiên */
+}
+
+.card-images img:last-child {
+  margin-right: 0; /* Không có khoảng cách bên phải cho ảnh cuối cùng */
+}
+/* Reset some default browser styles */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling for header and navigation */
+header {
+  background-color: #FF69B4;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Logo styling */
+.logo {
+  float: left;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Style for login and cart links */
+#login-link, #cart-link {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* Add more CSS styles for other elements on your page as needed */
+--đăng nhập và giỏ hàng
+/* CSS chung cho trang */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #FF69B4;
+  color: #fff;
+  padding: 10px 0;
+}
+
+/* CSS cho trang Đăng nhập */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.login-container {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.login-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.google-login, .facebook-login {
+  background-color: #4285f4;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.google-login:hover, .facebook-login:hover {
+  background-color: #357ae8;
+}
+
+.divider {
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+/* CSS cho trang Giỏ hàng */
+.cart-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.cart-container {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cart-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-items li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cart-items img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.remove-button {
+  background-color: #f00;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.remove-button:hover {
+  background-color: #d00;
+}
+
+.total-price {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.checkout-button {
+  background-color: #69c1ff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.checkout-button:hover {
+  background-color: #69c1ff;
+}
