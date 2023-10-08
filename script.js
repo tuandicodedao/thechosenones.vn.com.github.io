@@ -87,6 +87,44 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  const productItems = document.querySelectorAll('.product-items li');
+
+  productItems.forEach((item) => {
+    const productImage = item.querySelector('img');
+    const promotionLabel = item.querySelector('.promotion-label');
+    
+    // Add a click event listener to each product item
+    item.addEventListener('click', () => {
+      const imageUrl = productImage.getAttribute('src');
+      const lightbox = document.querySelector('.lightbox');
+      const lightboxImage = lightbox.querySelector('img');
+      const lightboxPromotionLabel = lightbox.querySelector('.promotion-label');
+
+      // Set the image source and promotion label in the lightbox
+      lightboxImage.setAttribute('src', imageUrl);
+      lightboxPromotionLabel.textContent = promotionLabel.textContent;
+
+      // Show the lightbox
+      lightbox.classList.add('show');
+    });
+  });
+
+  // Close the lightbox when clicking outside of it
+  const lightbox = document.querySelector('.lightbox');
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) {
+      lightbox.classList.remove('show');
+    }
+  });
+
+  
+  
+  productItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('enlarged');
+    });
+  });
+
 
   
 });

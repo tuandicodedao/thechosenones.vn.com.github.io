@@ -1,29 +1,31 @@
-/* CSS chung */
 :root {
-  --primary-color: #ff69b4; /* Màu hồng */
-  --secondary-color: #fff; /* Màu trắng */
+  --primary-color: #FF69B4;
+  --secondary-color: #333;
+  --accent-color: #EC59A5;
 }
 
 /* Reset CSS */
-body, h1, h2, h3, p, ul, li {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* Global Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--secondary-color);
-  color: #333;
+  background-color: #f7f7f7;
+  color: var(--secondary-color);
 }
 
 header {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: #fff;
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -37,34 +39,34 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: var(--secondary-color);
+  color: #fff;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #333;
+  color: var(--primary-color);
 }
 
-/* CSS cho trạng thái "active" */
+/* CSS for "active" state */
 nav a.active {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  background-color: #fff;
+  color: var(--primary-color);
   border-radius: 5px;
   padding: 5px 10px;
 }
 
-/* Kiểu CSS cho sản phẩm */
+/* CSS for product items */
 .product-items {
   list-style: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Canh ảnh theo chiều ngang */
+  justify-content: space-between;
 }
 
 .product-items li {
-  width: calc(33.33% - 20px); /* 33.33% cho mỗi ảnh và cách giữa 20px */
+  width: calc(33.33% - 20px);
   margin-bottom: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -75,33 +77,32 @@ nav a.active {
 }
 
 .product-items img {
-  max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước li */
-  height: auto; /* Duy trì tỷ lệ khung ảnh */
+  max-width: 100%;
+  height: auto;
   border-radius: 5px;
 }
 
 .buy-button {
-  background-color: #ec59a5; /* Màu xanh lá cây */
+  background-color: var(--accent-color);
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .buy-button:hover {
-  background-color: #333; /* Màu xám đậm khi hover */
+  background-color: #FF69B4;
 }
 
-/* Kiểu CSS cho trạng thái "active" của nút */
+/* CSS for "active" state of the button */
 .buy-button:active {
-  background-color: #ffffffa4; /* Màu xanh lá cây tương tự */
-  color: #fff;
-  transform: scale(0.95); /* Hiệu ứng thu nhỏ khi được nhấp */
+  background-color: #EC59A5;
+  transform: scale(0.95);
 }
 
-/* Kiểu CSS cho trang giới thiệu và liên hệ */
+/* CSS for about and contact sections */
 .about, .contact {
   text-align: center;
   padding: 20px;
@@ -110,17 +111,17 @@ nav a.active {
 footer {
   text-align: center;
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: #fff;
   padding: 10px 0;
 }
 
-/* Kiểu CSS cho logo */
+/* CSS for the logo */
 .logo img {
   max-width: 100%;
   height: auto;
 }
 
-/* Kiểu CSS cho thanh tìm kiếm */
+/* CSS for the search bar */
 .search-bar {
   display: flex;
   align-items: center;
@@ -133,7 +134,7 @@ footer {
 }
 
 #search-button {
-  background-color: #e6e2e265;
+  background-color: #E6E2E265;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -142,7 +143,58 @@ footer {
   cursor: pointer;
 }
 
-/* Kiểu CSS cho trạng thái "active" của thanh tìm kiếm */
+/* CSS for "active" state of the search input and button */
 #search-input:focus, #search-button:active {
-  background-color: #ff69b4; /* Màu hồng tương tự */
+  background-color: var(--primary-color);
+  color: #fff;
+}
+/* CSS for the lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.lightbox .promotion-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: yellow;
+  color: red;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.lightbox.show {
+  display: flex;
+}
+.promotion-label {
+  background-color: yellow;
+  color: red;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: none;
+  z-index: 1;
+}
+
+.product-item:hover .promotion-label {
+  display: block;
 }
