@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const productItems = document.querySelectorAll('.product-items li');
+  /* const productItems = document.querySelectorAll('.product-items li');*/
 
   productItems.forEach((item) => {
     const productImage = item.querySelector('img');
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Close the lightbox when clicking outside of it
-  const lightbox = document.querySelector('.lightbox');
+ // const lightbox = document.querySelector('.lightbox');
   lightbox.addEventListener('click', (event) => {
     if (event.target === lightbox) {
       lightbox.classList.remove('show');
@@ -209,5 +209,62 @@ removeButtons.forEach(function (button) {
 });
 
 checkoutButton.addEventListener("click", handleCheckout);
+
+
+// Lấy danh sách tất cả các ảnh sản phẩm
+const productImages = document.querySelectorAll('.product-items img');
+
+// Lấy thẻ ảnh lớn và lightbox
+const largeImage = document.getElementById('large-image');
+const lightbox = document.querySelector('.lightbox');
+
+// Lặp qua tất cả các ảnh sản phẩm và thêm sự kiện click
+productImages.forEach((image) => {
+  image.addEventListener('click', () => {
+    // Đặt src cho ảnh lớn trong lightbox
+    largeImage.src = image.src;
+    // Hiện lightbox
+    lightbox.style.display = 'block';
+  });
+});
+
+// Sự kiện click để đóng lightbox
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+
+
+// Lấy thẻ input và nút tìm kiếm
+const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+
+// Lấy danh sách các sản phẩm
+const productItems = document.querySelectorAll('.product-items li');
+
+// Sự kiện click trên nút tìm kiếm
+searchButton.addEventListener('click', () => {
+  const searchTerm = searchInput.value.toLowerCase(); // Lấy giá trị từ khóa tìm kiếm và chuyển thành chữ thường
+
+  // Lặp qua danh sách sản phẩm để kiểm tra tên sản phẩm
+  productItems.forEach((item) => {
+    const productName = item.querySelector('h3').textContent.toLowerCase(); // Lấy tên sản phẩm và chuyển thành chữ thường
+
+    // Kiểm tra xem tên sản phẩm có chứa từ khóa tìm kiếm không
+    if (productName.includes(searchTerm)) {
+      item.style.display = 'block'; // Hiển thị sản phẩm nếu tìm thấy
+    } else {
+      item.style.display = 'none'; // Ẩn sản phẩm nếu không tìm thấy
+    }
+  });
+});
+
+// Sự kiện nhấn Enter trong ô tìm kiếm
+searchInput.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter') {
+    searchButton.click(); // Kích hoạt sự kiện click trên nút tìm kiếm khi nhấn Enter
+  }
+});
+
 
 });

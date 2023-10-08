@@ -416,3 +416,88 @@ header {
 .checkout-button:hover {
   background-color: #69c1ff;
 }
+
+
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Một lớp mờ đen cho nền */
+  text-align: center;
+}
+.product-items img:hover {
+  transform: scale(1.1); /* Phóng to ảnh khi đè chuột vào */
+  transition: transform 0.3s ease-in-out; /* Thời gian và kiểu chuyển động */
+  cursor: pointer; /* Biểu tượng con trỏ khi đè chuột vào */
+}
+/* hiệu ứng nút */
+/* Hiệu ứng hover cho nút */
+.buy-button:hover {
+  background-color: #45a049; /* Màu nền thay đổi khi di chuột vào */
+  color: white; /* Màu chữ thay đổi khi di chuột vào */
+}
+
+/* Hiệu ứng hover cho liên kết */
+a:hover {
+  color: #0078d4; /* Màu chữ thay đổi khi di chuột vào */
+}
+/* Hiệu ứng hover cho hình ảnh sản phẩm */
+.product-items img:hover {
+  transform: scale(1.1); /* Phóng to ảnh khi di chuột vào */
+  transition: transform 0.3s ease-in-out; /* Thời gian và kiểu chuyển động */
+  cursor: pointer; /* Biểu tượng con trỏ khi di chuột vào */
+}
+/* Hiệu ứng hover cho menu điều hướng */
+nav ul li a:hover {
+  color: #0078d4; /* Màu chữ thay đổi khi di chuột vào */
+}
+/* Hiệu ứng trang chủ */
+.greeting-card {
+  background-color: #f2f2f2; /* Màu nền cho phần thiệp ảnh */
+  padding: 20px;
+  text-align: center;
+}
+
+.greeting-card h2 {
+  color: #333; /* Màu chữ cho tiêu đề */
+}
+
+.greeting-card p {
+  color: #777; /* Màu chữ cho mô tả */
+}
+
+.card-images img:hover {
+  transform: scale(1.1); /* Phóng to ảnh khi di chuột vào */
+  transition: transform 0.3s ease-in-out; /* Thời gian và kiểu chuyển động */
+  cursor: pointer; /* Biểu tượng con trỏ khi di chuột vào */
+}
+/* Hiệu ứng hover cho footer */
+footer:hover {
+  background-color: #333; /* Màu nền thay đổi khi di chuột vào */
+  color: white; /* Màu chữ thay đổi khi di chuột vào */
+}
+/* viền 3D
+/* CSS cho khung ảnh */
+.image-frame {
+  perspective: 1000px; /* Đặt góc nhìn 3D */
+  display: inline-block;
+  margin: 10px;
+  transform-style: preserve-3d; /* Bảo tồn hiệu ứng 3D */
+}
+
+/* CSS cho ảnh trong khung */
+.image-frame img {
+  width: 100%;
+  height: auto;
+  transform: rotateY(0); /* Góc xoay ban đầu */
+  transition: transform 0.3s ease-in-out; /* Hiệu ứng chuyển đổi góc xoay */
+}
+
+/* Hiệu ứng hover cho khung ảnh */
+.image-frame:hover img {
+  transform: rotateY(180deg); /* Góc xoay khi di chuột vào */
+}
