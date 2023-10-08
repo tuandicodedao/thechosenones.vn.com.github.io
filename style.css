@@ -1,0 +1,148 @@
+/* CSS chung */
+:root {
+  --primary-color: #ff69b4; /* Màu hồng */
+  --secondary-color: #fff; /* Màu trắng */
+}
+
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--secondary-color);
+  color: #333;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #333;
+}
+
+/* CSS cho trạng thái "active" */
+nav a.active {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+/* Kiểu CSS cho sản phẩm */
+.product-items {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Canh ảnh theo chiều ngang */
+}
+
+.product-items li {
+  width: calc(33.33% - 20px); /* 33.33% cho mỗi ảnh và cách giữa 20px */
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-items img {
+  max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước li */
+  height: auto; /* Duy trì tỷ lệ khung ảnh */
+  border-radius: 5px;
+}
+
+.buy-button {
+  background-color: #ec59a5; /* Màu xanh lá cây */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+  background-color: #333; /* Màu xám đậm khi hover */
+}
+
+/* Kiểu CSS cho trạng thái "active" của nút */
+.buy-button:active {
+  background-color: #ffffffa4; /* Màu xanh lá cây tương tự */
+  color: #fff;
+  transform: scale(0.95); /* Hiệu ứng thu nhỏ khi được nhấp */
+}
+
+/* Kiểu CSS cho trang giới thiệu và liên hệ */
+.about, .contact {
+  text-align: center;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 10px 0;
+}
+
+/* Kiểu CSS cho logo */
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Kiểu CSS cho thanh tìm kiếm */
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#search-button {
+  background-color: #e6e2e265;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Kiểu CSS cho trạng thái "active" của thanh tìm kiếm */
+#search-input:focus, #search-button:active {
+  background-color: #ff69b4; /* Màu hồng tương tự */
+}
